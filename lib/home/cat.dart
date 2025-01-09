@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-
-import 'home_page.dart';
+import 'package:logingpage/home/culture.dart';
+import 'package:logingpage/home/generalpage.dart';
+import 'package:logingpage/home/miscellinious.dart';
+import 'package:logingpage/home/sports.dart';
 
 class CategoryPage extends StatelessWidget {
   const CategoryPage({super.key});
@@ -9,20 +11,19 @@ class CategoryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Categories'),
+        title: Text('Quiz App'),
         backgroundColor: Colors.pink,
       ),
-      
       body: GridView.count(
         crossAxisCount: 2,
         padding: EdgeInsets.all(16.0),
         crossAxisSpacing: 16.0,
         mainAxisSpacing: 16.0,
         children: [
-          _buildCategoryBox(context, 'A'),
-          _buildCategoryBox(context, 'B'),
-          _buildCategoryBox(context, 'C'),
-          _buildCategoryBox(context, 'D'),
+          _buildCategoryBox(context, 'General Knowledge  '),
+          _buildCategoryBox(context, 'Culture and Language'),
+          _buildCategoryBox(context, 'Sports and Game'),
+          _buildCategoryBox(context, 'Miscellaneous'),
         ],
       ),
     );
@@ -31,10 +32,28 @@ class CategoryPage extends StatelessWidget {
   Widget _buildCategoryBox(BuildContext context, String title) {
     return GestureDetector(
       onTap: () {
-        if (title == 'A') {
+        if (title == 'General Knowledge  ') {
           Navigator.push(
             context,
-            MaterialPageRoute(builder: (context) => HomePage()),
+            MaterialPageRoute(builder: (context) => GeneralPage()),
+          );
+        }
+        if (title == 'Culture and Language  ') {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => CulturePage()),
+          );
+        }
+        if (title == 'Sports and Game  ') {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => SportPage()),
+          );
+        }
+        if (title == 'Miscellaneous ') {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => MiscellaneousPage()),
           );
         }
       },
@@ -44,6 +63,7 @@ class CategoryPage extends StatelessWidget {
           borderRadius: BorderRadius.circular(10),
           boxShadow: [
             BoxShadow(
+              // ignore: deprecated_member_use
               color: Colors.grey.withOpacity(0.5),
               blurRadius: 10,
               offset: Offset(0, 5),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:logingpage/home/signup.dart';
+import '../forgetpw.dart';
 import 'cat.dart';
 
 class LoginPage extends StatelessWidget {
@@ -54,8 +56,7 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 20),
-           
-                  ElevatedButton(
+                 ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.pink,
                       shape: RoundedRectangleBorder(
@@ -83,18 +84,28 @@ class LoginPage extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerRight,
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ForgotPasswordPage()),
+                        );
+                      },
                       child: Text(
                         'Forgot Password?',
                         style: TextStyle(color: Colors.grey),
                       ),
                     ),
                   ),
-                  SizedBox(height: 10),
                   Align(
                     alignment: Alignment.center,
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => SignUpPage()),
+                        );
+                      },
                       child: Text(
                         'Need an account? SIGN UP',
                         style: TextStyle(color: Colors.blue),
@@ -110,4 +121,3 @@ class LoginPage extends StatelessWidget {
     );
   }
 }
-
