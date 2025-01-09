@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'home_page.dart';
+import 'cat.dart';
 
 class LoginPage extends StatelessWidget {
   final TextEditingController usernameController = TextEditingController();
@@ -55,6 +54,7 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 20),
+           
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.pink,
@@ -66,7 +66,7 @@ class LoginPage extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => HomePage()),
+                        MaterialPageRoute(builder: (context) => CategoryPage()),
                       );
                     },
                     child: Center(
